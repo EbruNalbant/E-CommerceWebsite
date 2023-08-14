@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* grabient.com */
+  background-image: linear-gradient(241deg, #fbab7e 0%, #f7ce68 100%);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
+
+header h1 {
+  text-shadow: 0 0 30px orange;
+}
+
+header input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+  border: 4px solid orange;
+}
+
+header div {
+  display: flex;
+  gap: 20px;
+}
+
+header div button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+header div button:nth-child(1) {
+  background: black;
+}
+
+header div button:nth-child(2) {
+  background: brown;
+}
+
+header div button:nth-child(3) {
+  background: rgba(255, 0, 0, 0.607);
+}
+
+/* Categories part*/
+
+section {
+  padding: 50px;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.category-card {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 30px rgba(20, 20, 20, 0.234);
+  border-radius: 10px;
+}
+
+.category-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.category-card p {
+  position: absolute;
+  bottom: 10px;
+  background: white;
+  width: 70%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 2px 2px 10px black;
+}
+
+/* Products part */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 120px;
+  margin-top: 40px;
+}
+
+@media (max-width: 1100px) {
+  .products {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+.card {
+  max-width: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  /* https://getcssscan.com/css-box-shadow-examples */
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card .action {
+  background: black;
+  padding: 7px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.card .action button {
+  background-image: linear-gradient(241deg, #fbab7e 0%, #f7ce68 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: scale 300ms;
+}
+
+.card .action button:hover {
+  scale: 0.96;
+}
+
+/* Modal (Basket Window) */
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(128, 128, 128, 0.401);
+  display: none;
+  place-items: center;
+}
+
+.active {
+  display: grid;
+}
+
+.modal {
+  background: white;
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.modal #icon {
+  display: flex;
+  justify-content: end;
+}
+
+.modal #icon img {
+  width: 40px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.modal #icon img:hover {
+  scale: 0.87;
+}
+
+.modal #list {
+  flex-grow: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 14px;
+}
+
+.modal #list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.modal #list .item img {
+  width: 60px;
+  border-radius: 7px;
+}
+
+.item .price {
+  color: green;
+}
+
+.modal #list .item #delete {
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.modal #delete:hover {
+  transform: rotate(15deg);
+}
+
+.modal #total {
+  text-align: center;
+}
+
+.modal #total span {
+  color: green;
+  font-weight: bold;
+}
